@@ -1,0 +1,38 @@
+
+<div class="page-header">
+	<div  id="id-search-field" >
+		<input class="" type="text" placeholder="Search text" ng-model="searchField">
+  </div>
+</div>
+
+<div ng-show="artists">
+	<ul id="id-main-search-list" class="media-list">
+		<li class="media"  ng-repeat="artist in artists">
+			<a class="media-link" href="#artist/{{artist.mbid}}">
+				<div class="media-image pull-left img-polaroid">
+					<img class="media-object" src="{{artist.image.small}}">
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">{{artist.name}}</h4>
+					listeners: {{artist.listeners}} | <a href="{{artist.url}}" title="Last fm link">Last fm link</a>
+				</div>
+			</a>
+		</li>
+	</ul>
+
+	<div class="pagination">
+		<ul>
+		    <li><a href="#">Prev</a></li>
+		    <li><a href="#">1</a></li>
+		    <li><a href="#">2</a></li>
+		    <li><a href="#">3</a></li>
+		    <li><a href="#">4</a></li>
+		    <li><a href="#">5</a></li>
+		    <li><a href="#">Next</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="well well-small" ng-hide="artists">
+	Empty list
+</div>
